@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: troubleshooting-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: troubleshooting
+  template:
+    metadata:
+      labels:
+        app: troubleshooting
+    spec:
+      containers:
+      - name: troubleshooting-container
+        image: 2xxxxxxxxxx.dkr.ecr.us-west-2.amazonaws.com/
+        ports:
+        - containerPort: 80
